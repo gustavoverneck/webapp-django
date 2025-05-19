@@ -4,7 +4,12 @@ import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/ProtectedRoute';
 
 import LoginPage from './pages/login/LoginPage';
-import Dashboard from './pages/dashboard/DashboardPage';
+import DashboardLayout from './pages/dashboard/DashboardLayout';
+import ChamadosPage from './pages/dashboard/ChamadosPage';
+import ConhecimentoPage from './pages/dashboard/ConhecimentoPage';
+import SegredosPage from './pages/dashboard/SegredosPage';
+import PerfilPage from './pages/dashboard/PerfilPage';
+import TimeSheetPage from './pages/dashboard/TimeSheetPage';
 
 function App() {
   return (
@@ -17,10 +22,16 @@ function App() {
             path="/dashboard"
             element={
               <PrivateRoute>
-                <Dashboard />
+                <DashboardLayout />
               </PrivateRoute>
             }
-          />
+          >
+            <Route path="chamados" element={<ChamadosPage />} />
+            <Route path="conhecimento" element={<ConhecimentoPage />} />
+            <Route path="segredos" element={<SegredosPage />} />
+            <Route path="perfil" element={<PerfilPage />} />
+            <Route path="timesheet" element={<TimeSheetPage />} />
+          </Route>
         </Routes>
       </AuthProvider>
     </BrowserRouter>

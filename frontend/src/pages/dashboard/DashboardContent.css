@@ -1,0 +1,161 @@
+/* DashBoardContent.css */
+
+/* Container */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 1rem 1rem;
+    padding-top: 6rem;
+}
+
+/* Titles */
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Filters grid */
+.dashboard-filters-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .dashboard-filters-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1024px) {
+    .dashboard-filters-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Filter fields */
+.dashboard-filter-field label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.dashboard-filter-field input,
+.dashboard-filter-field select {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: #fafbfc;
+    transition: border-color 0.2s;
+}
+
+.dashboard-filter-field input:focus,
+.dashboard-filter-field select:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+/* Button */
+.dashboard-btn {
+    background: #2563eb;
+    color: #fff;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dashboard-btn:disabled {
+    background: #93c5fd;
+    cursor: not-allowed;
+}
+
+.dashboard-btn:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+/* Table styles */
+.dashboard-table-container {
+    overflow-x: auto;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.dashboard-table thead {
+    background: #f9fafb;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 0.75rem 1.5rem;
+    text-align: left;
+    font-size: 0.97rem;
+    white-space: nowrap;
+}
+
+.dashboard-table th {
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.dashboard-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.dashboard-table td {
+    color: #374151;
+}
+
+.dashboard-empty-message {
+    color: #6b7280;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+/* Spinner (for loading) */
+.dashboard-spinner {
+    animation: dashboard-spin 1s linear infinite;
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@keyframes dashboard-spin {
+    100% { transform: rotate(360deg); }
+}

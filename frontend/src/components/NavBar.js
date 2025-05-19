@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaHome, FaTools, FaKey, FaBook, FaClock, FaSignOutAlt } from 'react-icons/fa';
+import { FaHome, FaTools, FaKey, FaBook, FaClock, FaSignOutAlt, FaUser } from 'react-icons/fa';
 import AuthContext from '../context/AuthContext';
 import './NavBar.css';
 
@@ -10,10 +10,11 @@ export default function Navbar() {
 
   const navItems = [
     { label: 'Inicio', icon: <FaHome />, path: '/dashboard' },
-    { label: 'Administrar Chamados', icon: <FaTools />, path: '/chamados' },
-    { label: 'Gerenciador de Segredos', icon: <FaKey />, path: '/segredos' },
-    { label: 'Base de Conhecimento', icon: <FaBook />, path: '/conhecimento' },
-    { label: 'Timesheet', icon: <FaClock />, path: '/timesheet' },
+    { label: 'Perfil', icon: <FaUser />, path: '/dashboard/perfil' },
+    { label: 'Administrar Chamados', icon: <FaTools />, path: '/dashboard/chamados' },
+    { label: 'Gerenciador de Segredos', icon: <FaKey />, path: '/dashboard/segredos' },
+    { label: 'Base de Conhecimento', icon: <FaBook />, path: '/dashboard/conhecimento' },
+    { label: 'Timesheet', icon: <FaClock />, path: '/dashboard/timesheet' },
   ];
   return (
     <header className="navbar">
