@@ -1,0 +1,78 @@
+/* NavBar.css */
+/* Global color palette */
+:root {
+    --bg-primary: #f0f0f0;
+    --bg-secondary: #e0e0e0;
+    --border-color: #ccc;
+    --border-focus: #bbb;
+    --text-primary: #1a1a1a;
+    --text-secondary: #000;
+    --accent-primary: #ff6b35;
+    --accent-hover: #f13c3c;
+    --accent-focus: rgba(255, 107, 53, 0.3);
+}
+
+body {
+    background-color: var(--bg-secondary);
+    background-image: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--bg-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+    scale: 0.75; /* Make logo slightly smaller */
+}
+
+.navbar-logo img {
+    height: min(40px, 100%); /* Limit to 40px or navbar height, whichever is smaller */
+    max-height: 100%; /* Ensure it doesn't exceed navbar height */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 10px;
+}
+.navbar-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Push buttons to the right */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+/* Make navbar buttons match navbar background */
+.navbar button {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+.navbar button:hover {
+    background-color: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-hover);
+}
+
+/* Button focus effect */
+.navbar button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-focus);
+    border-color: var(--accent-focus);
+}
+
+/* Active button state */
+.navbar button.active {
+    background-color: var(--accent-hover);
+    color: white;
+    border-color: var(--accent-hover);
+}
