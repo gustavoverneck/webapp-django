@@ -10,6 +10,7 @@ import ConhecimentoPage from './pages/dashboard/ConhecimentoPage';
 import SegredosPage from './pages/dashboard/SegredosPage';
 import PerfilPage from './pages/dashboard/PerfilPage';
 import TimeSheetPage from './pages/dashboard/TimeSheetPage';
+import DashboardHomePage from './pages/dashboard/DashboardHomePage';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
               </PrivateRoute>
             }
           >
+            <Route index element={<Navigate to="inicio" />} />
+            <Route path="inicio" element={<DashboardHomePage />} />
             <Route path="chamados" element={<ChamadosPage />} />
             <Route path="conhecimento" element={<ConhecimentoPage />} />
             <Route path="segredos" element={<SegredosPage />} />

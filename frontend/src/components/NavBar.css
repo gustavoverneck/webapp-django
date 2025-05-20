@@ -1,8 +1,8 @@
 /* NavBar.css */
 /* Global color palette */
 :root {
-    --bg-primary: #f0f0f0;
-    --bg-secondary: #e0e0e0;
+    --bg-primary: white;
+    --bg-secondary: #efefef;
     --border-color: #ccc;
     --border-focus: #bbb;
     --text-primary: #1a1a1a;
@@ -26,24 +26,40 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--text-primary);
+    margin-right: 5px;
+    transition: color 0.2s;
+    vertical-align: middle;
+    /* Adjust icon position to align with text */
+    position: flex;
+}
+
+.navbar button:hover .nav-icon,
+.navbar button:focus .nav-icon {
+    color: white;
+}
+
 .navbar-logo {
     display: flex;
-    align-items: center;
-    flex-shrink: 0; /* Prevent logo from shrinking */
-    scale: 0.75; /* Make logo slightly smaller */
+    flex-shrink: 0;
+    scale: 0.60;
+    margin-right: auto; /* Push logo to the far left */
 }
 
 .navbar-logo img {
     height: min(40px, 100%); /* Limit to 40px or navbar height, whichever is smaller */
     max-height: 100%; /* Ensure it doesn't exceed navbar height */
     width: auto; /* Maintain aspect ratio */
-    margin-right: 10px;
 }
 .navbar-buttons {
-    display: flex;
-    gap: 10px;
-    margin-left: auto; /* Push buttons to the right */
+    gap: 15px;
     flex-shrink: 0; /* Prevent buttons from shrinking */
+    display: flex;
 }
 
 /* Make navbar buttons match navbar background */
@@ -72,6 +88,27 @@ body {
 
 /* Active button state */
 .navbar button.active {
+    background-color: var(--accent-hover);
+    color: white;
+    border-color: var(--accent-hover);
+}
+
+/* Button hover effect */
+.navbar .logout-button:hover {
+    background-color: var(--accent-hover);
+    color: white;
+    border-color: var(--accent-hover);
+}
+
+/* Button focus effect */
+.navbar .logout-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-focus);
+    border-color: var(--accent-focus);
+}
+
+/* Active button state */
+.navbar .logout-button.active {
     background-color: var(--accent-hover);
     color: white;
     border-color: var(--accent-hover);

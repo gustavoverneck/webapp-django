@@ -10,6 +10,7 @@ import ConhecimentoPage from './pages/dashboard/ConhecimentoPage';
 import SegredosPage from './pages/dashboard/SegredosPage';
 import PerfilPage from './pages/dashboard/PerfilPage';
 import TimeSheetPage from './pages/dashboard/TimeSheetPage';
+import DashboardHomePage from './pages/dashboard/DashboardHomePage';
 import Dashboard from './pages/dashboard/DashboardPage';
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
             }
           >
             <Route index element={<Navigate to="inicio" />} />
-            <Route path="inicio" element={<Dashboard />} />
+            <Route path="inicio" element={<DashboardHomePage />} />
             <Route path="perfil" element={<PerfilPage />} />
             <Route path="chamados" element={<ChamadosPage />} />
             <Route path="segredos" element={<SegredosPage />} />

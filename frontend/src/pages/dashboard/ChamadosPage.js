@@ -1,23 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Spinner from '../../components/Spinner';
 import "./DashboardContent.css";
-
-function Spinner() {
-  return (
-    <span className="dashboard-spinner" role="status" aria-label="Carregando">
-      <svg viewBox="0 0 24 24" fill="none">
-        <circle
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="#2563eb"
-          strokeWidth="4"
-          strokeDasharray="60"
-          strokeDashoffset="20"
-        />
-      </svg>
-    </span>
-  );
-}
 
 export default function ChamadosPage() {
   const [chamados, setChamados] = useState([]);
@@ -69,7 +52,7 @@ export default function ChamadosPage() {
 
   return (
     <div className="dashboard-container">
-      <h1 className="dashboard-title">Chamados</h1>
+      <h1 className="dashboard-title">Administrar Chamados</h1>
 
         <section className="dashboard-section">
           <div className="dashboard-section-title">Filtros</div>

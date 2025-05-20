@@ -12,21 +12,23 @@ export const AuthProvider = ({ children }) => {
   );
 
   const [user, setUser] = useState(() =>
-    authTokens ? jwtDecode(authTokens.access) : null
-  );
+  localStorage.getItem('authTokens')
+    ? JSON.parse(localStorage.getItem('authTokens')).user
+    : null
+);
 
-  const loginUser = async (username, password) => {
+  const loginUser = async (email, password) => {
     const response = await fetch('http://localhost:8000/api/token/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
     });
 
     if (response.ok) {
       const data = await response.json();
       localStorage.setItem('authTokens', JSON.stringify(data));
       setAuthTokens(data);
-      setUser(jwtDecode(data.access));
+      setUser(data.user);
     } else {
       alert('Login failed');
     }

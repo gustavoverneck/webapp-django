@@ -7,12 +7,12 @@ import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
   const { loginUser } = useContext(AuthContext);
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    loginUser(username, password);
+    loginUser(email, password);
   };
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
@@ -30,9 +30,9 @@ export default function LoginPage() {
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
-          placeholder="Username"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
+          placeholder="E-mail"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
         />
         <input
           type="password"
