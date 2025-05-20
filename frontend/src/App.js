@@ -11,6 +11,7 @@ import SegredosPage from './pages/dashboard/SegredosPage';
 import PerfilPage from './pages/dashboard/PerfilPage';
 import TimeSheetPage from './pages/dashboard/TimeSheetPage';
 import DashboardHomePage from './pages/dashboard/DashboardHomePage';
+import ChamadoDetailPage from './pages/dashboard/ChamadoDetailPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="segredos" element={<SegredosPage />} />
             <Route path="perfil" element={<PerfilPage />} />
             <Route path="timesheet" element={<TimeSheetPage />} />
+            <Route path="/dashboard/chamados/:id/detalhes" element={<ChamadoDetailPage />} />
           </Route>
         </Routes>
       </AuthProvider>

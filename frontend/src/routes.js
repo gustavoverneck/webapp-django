@@ -11,7 +11,6 @@ import SegredosPage from './pages/dashboard/SegredosPage';
 import PerfilPage from './pages/dashboard/PerfilPage';
 import TimeSheetPage from './pages/dashboard/TimeSheetPage';
 import DashboardHomePage from './pages/dashboard/DashboardHomePage';
-import Dashboard from './pages/dashboard/DashboardPage';
 
 function App() {
   return (

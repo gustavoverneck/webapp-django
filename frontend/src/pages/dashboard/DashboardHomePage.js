@@ -24,7 +24,7 @@ export default function DashboardHomePage() {
 
     return (
         <div className="dashboard-container">
-            <h1 className="dashboard-title">Olá, {user?.first_name}!</h1>
+            <h1 className="dashboard-title">Olá, {user.first_name}!</h1>
             <section className="dashboard-section">
                 <div className="dashboard-section-title">Informações Gerais</div>
                 {loading ? (

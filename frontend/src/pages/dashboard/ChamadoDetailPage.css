@@ -1,0 +1,18 @@
+.dashboard-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .dashboard-detail-grid {
+    grid-template-columns: 1.5fr 2fr;
+  }
+}
+
+.dashboard-detail-left,
+.dashboard-detail-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

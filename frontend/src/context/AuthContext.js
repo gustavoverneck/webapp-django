@@ -5,17 +5,16 @@ import { jwtDecode } from 'jwt-decode';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const storedTokens = localStorage.getItem('authTokens');
+  const storedUser = localStorage.getItem('user');
+
   const [authTokens, setAuthTokens] = useState(() =>
-    localStorage.getItem('authTokens')
-      ? JSON.parse(localStorage.getItem('authTokens'))
-      : null
+    storedTokens ? JSON.parse(storedTokens) : null
   );
 
   const [user, setUser] = useState(() =>
-  localStorage.getItem('authTokens')
-    ? JSON.parse(localStorage.getItem('authTokens')).user
-    : null
-);
+    storedUser ? JSON.parse(storedUser) : null
+  );
 
   const loginUser = async (email, password) => {
     const response = await fetch('http://localhost:8000/api/token/', {
@@ -27,8 +26,9 @@ export const AuthProvider = ({ children }) => {
     if (response.ok) {
       const data = await response.json();
       localStorage.setItem('authTokens', JSON.stringify(data));
+      localStorage.setItem('user', JSON.stringify(data.user));  // Salva o user no localStorage
       setAuthTokens(data);
-      setUser(data.user);
+      setUser(data.user);  // Usa o user direto da resposta da API
     } else {
       alert('Login failed');
     }
@@ -38,6 +38,7 @@ export const AuthProvider = ({ children }) => {
     setAuthTokens(null);
     setUser(null);
     localStorage.removeItem('authTokens');
+    localStorage.removeItem('user');  // Remove o user também
   };
 
   const contextData = {

@@ -7,6 +7,7 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework.exceptions import AuthenticationFailed
 from django.contrib.auth import get_user_model
+from rest_framework_simplejwt.views import TokenRefreshView
 
 User = get_user_model()
 
@@ -35,6 +36,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
             "email": user.email,
             "first_name": user.first_name,
             "last_name": user.last_name,
+            "full_name": user.full_name
         }
 
         return data
@@ -42,3 +44,6 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
+
+class CustomTokenRefreshView(TokenRefreshView):
+    pass

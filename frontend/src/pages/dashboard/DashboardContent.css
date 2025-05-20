@@ -219,3 +219,72 @@
     color: var(--accent-primary);
     line-height: 1;
 }
+
+.dashboard-chamado-table-row-clickable {
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+.dashboard-chamado-table-row-clickable:hover {
+    background: var(--accent-focus);
+}
+
+.mensagens-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+.mensagens-list li {
+    background: var(--bg-primary);
+    border-radius: 6px;
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+.mensagens-list li strong {
+    color: var(--accent-primary);
+    margin-right: 8px;
+}
+
+.dashboard-message-card {
+    background: var(--bg-primary);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid var(--border-color);
+}
+
+.dashboard-message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-message-user {
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.dashboard-message-date {
+    font-size: 0.875rem;
+    color: #888;
+}
+
+.dashboard-message-content {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.dashboard-message-meta {
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
