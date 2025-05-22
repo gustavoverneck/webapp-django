@@ -1,4 +1,4 @@
-# Projeto WebApp Numen IT
+# Projeto WebApp
 
 ## Descrição
 Sistema simples de administração de tarefas.
