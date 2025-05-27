@@ -1,7 +1,7 @@
 # Projeto WebApp
 
 ## Descrição
-Sistema simples de administração de tarefas.
+Sistema simples de administração de tarefas usando Python + Django + React
 
 ## Estrutura do Projeto
 
